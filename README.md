@@ -19,7 +19,7 @@ Values:
 ?a=3&b=0
 ```
 
- 4. Task:  Enter the docker directory ```opstasks/docker``` and use ```Dockerfile``` as a template to:
+4. Task:  Enter the docker directory ```opstasks/docker``` and use ```Dockerfile``` as a template to:
 	- Create a docker image ```python-app``` for application script ```div.py```
 	- Start docker container with ```python-app``` image exposing the service on port ```:8080```
 
@@ -59,5 +59,5 @@ CREATE TABLE tBet (
 Use ```mysql``` client from command line to establish DB session and execute following tasks:
 
  - Update ```country_code = "AUS"``` for ```cust_id = 13```
- - Select all bets from ```tBet``` for ```cust_id = 42```
+ - Select all bets from ```tBet``` for ```country_code = "GBR"```
  - How can we improve the select statement speed for the task above?

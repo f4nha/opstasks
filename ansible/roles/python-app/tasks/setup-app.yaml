@@ -1,0 +1,6 @@
+---
+
+- name: "Ensure application folder"
+  file:
+    path: "{{ python_app_root }}/python"
+    state: directory

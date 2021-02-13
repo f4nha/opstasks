@@ -58,6 +58,6 @@ CREATE TABLE tBet (
 
 Use ```mysql``` client from command line to establish DB session and execute following tasks:
 
-	- Update ```country_code = "AUS"``` for ```cust_id = 13```
-	- Select all bets from ```tBet``` for ```cust_id = 42```
-	- How can we improve the select statement speed for the task above?
+ - Update ```country_code = "AUS"``` for ```cust_id = 13```
+ - Select all bets from ```tBet``` for ```cust_id = 42```
+ - How can we improve the select statement speed for the task above?

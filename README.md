@@ -1,6 +1,6 @@
 DevOps evaluation tasks
 
-1. Task: Clone repository ... with DevOps task examples
+1. Task: Clone repository https://github.com/stoyanpisov/opstasks.git with DevOps task examples
 
 2. Task: Enter ```opstasks/python``` directory view and start the python application script ```div.py``` from command line. The script will start a simple webservice listening on port ```:5001```  for http GET request with two integer parameters ```a``` and ```b``` which will return the result of integer division as a plain text
 

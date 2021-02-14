@@ -31,7 +31,7 @@ Values:
 	- Scale up ```nginx-proxy-deployment``` deployment up to 5 replicas
 	- Can you create a deployment which run 3 replicas with docker image ```python-app``` on port ```:5001```
 
-6. Task: Database. There is already existing MySQL database ```db_sportsbook``` with two tables ```tCustomer``` and ```tBet``` with random data:
+6. Task: Database. There is already existing MySQL database ```db_sportsbook``` with two tables ```tCustomer``` and ```tBet```:
 
 ```
 -- create tCustomer
@@ -56,8 +56,59 @@ CREATE TABLE tBet (
 );
 ```
 
-Use ```mysql``` client from command line to establish DB session and execute following tasks:
+Populated with random data:
+
+```
+MariaDB [db_sportsbook]> select * from tCustomer limit 10;
++---------+------------------+------------+--------------+
+| cust_id | username         | cr_date    | country_code |
++---------+------------------+------------+--------------+
+|       1 | elinor.assante   | 2015-04-10 | BRB          |
+|       2 | kathi.eggebrecht | 2021-10-15 | GBR          |
+|       3 | vito.cahill      | 2020-11-24 | MEX          |
+|       4 | loree.karsten    | 2017-08-06 | MEX          |
+|       5 | onita.lindholm   | 2011-04-26 | BRB          |
+|       6 | hollis.neault    | 2018-09-24 | MEX          |
+|       7 | cristin.maccini  | 2015-07-27 | GBR          |
+|       8 | sherry.schoville | 2019-08-27 | AUS          |
+|       9 | lynell.hsiao     | 2019-07-28 | USA          |
+|      10 | chantel.cauley   | 2012-12-01 | GBR          |
++---------+------------------+------------+--------------+
+
+MariaDB [db_sportsbook]> select * from tBet limit 10;
++--------+---------+---------+------------+----------+--------+
+| bet_id | cust_id | seln_id | plc_date   | price    | amount |
++--------+---------+---------+------------+----------+--------+
+|      1 |      88 |     414 | 2017-01-26 | 1.149000 |  8.150 |
+|      2 |      82 |     538 | 2013-06-13 | 2.406000 |  1.470 |
+|      3 |      98 |     834 | 2020-07-05 | 1.745000 |  2.960 |
+|      4 |      72 |     325 | 2016-04-02 | 1.248000 |  7.550 |
+|      5 |      54 |      80 | 2016-01-25 | 1.556000 |  7.270 |
+|      6 |       1 |     927 | 2013-10-23 | 2.840000 | 10.640 |
+|      7 |      48 |     919 | 2016-06-10 | 2.264000 |  6.390 |
+|      8 |      77 |     614 | 2016-10-08 | 2.379000 |  8.360 |
+|      9 |      71 |      42 | 2012-06-18 | 2.909000 |  5.240 |
+|     10 |      62 |     651 | 2014-11-11 | 2.499000 | 10.840 |
++--------+---------+---------+------------+----------+--------+
+```
+
+Using ```mysql``` command line client from command line try the following tasks:
 
  - Update ```country_code = "AUS"``` for ```cust_id = 13```
  - Select all bets from ```tBet``` for ```country_code = "GBR"```
  - How can we improve the select statement speed for the task above?
+
+7. Task: Ansible. Enter ```opstasks/ansible``` directory and use already existing inventory ```inventory/all``` with three identical VM's:
+
+```
+[all]
+centos-7-vm-[01:03]
+```
+
+Execute ad-hoc ```shell``` command ```minikube start``` using ansible and start ```minikube``` service as ```gnlops``` user.
+
+Hint: Use command simmilar to:
+
+```
+ansible  ... -m shell -a "..." ...
+```

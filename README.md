@@ -98,7 +98,17 @@ Using ```mysql``` command line client from command line try the following tasks:
  - Select all bets from ```tBet``` for ```country_code = "GBR"```
  - How can we improve the select statement speed for the task above?
 
-7. Task: Ansible. Enter ```opstasks/ansible``` directory and use already existing inventory ```inventory/all``` with three identical VM's:
+7. Task: Using linux shell. Enter ```opstasks/shell``` directory.
+
+The file ```logs/apache_access``` contains randomized Apache http server logs:
+
+ - Find all log lines starting with 81
+ - Find all log lines between ```20:17``` and ```20:18``` on ```15/Mar/2021```
+ - Create new log file ```logs/apache_access_edited``` where http PUT request ```PUT /playbooks``` is replaced by ```PUT /playbooks_new```
+ - Can you count number of http GET request per minute from ```logs/apache_access```
+ - Execute ```gen_folders.sh``` bash script which will generate randomized folder strucutre under ```/tmp/data/pod-{a..h}/access-YYYYmmddHHMM.log``` directory. Find all files matching  years between 2017 and 2029.
+
+8. Task: Ansible. Enter ```opstasks/ansible``` directory and use already existing inventory ```inventory/all``` with three identical VM's:
 
 ```
 [all]
@@ -112,3 +122,23 @@ Hint: Use command simmilar to:
 ```
 ansible  ... -m shell -a "..." ...
 ```
+
+9. Task: Create free style Jenkins job
+
+
+Change current working directory into ```jenkins``` and execute
+
+```
+./get_url.sh
+```
+
+Open the url in a browser with provided credentials for ```gnlops```. Create a new free style Jenkins project which includes at lest three steps:
+
+- Checkout ```origin/master``` branch of GitHub repository https://github.com/stoyanpisov/picalc.git into seprate ```/src``` sub directory
+- Build simple project using following shell command
+
+```
+docker run --rm -v ${WORKSPACE}/src:/src -w /src gcc:9.3 make build
+```
+
+- Open repository ```Makefile``` and decide how can add a test step

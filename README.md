@@ -14,8 +14,6 @@ curl -X GET http://hostname:port?...
 Values:
 ```
 ?a=5&b=2
-?a=5&b=5
-?a=1&b=2
 ?a=3&b=0
 ```
 
@@ -94,7 +92,7 @@ MariaDB [db_sportsbook]> select * from tBet limit 10;
 
 Using ```mysql``` command line client from command line try the following tasks:
 
- - Update ```country_code = "AUS"``` for ```cust_id = 9```
+ - Update ```country_code = "AUS"``` for ```cust_id = 23```
  - Select all bets from ```tBet``` for ```country_code = "GBR"```
  - How can we improve the select statement speed for the task above?
 

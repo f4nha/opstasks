@@ -26,8 +26,9 @@ Values:
 	- Check available namespaces
 	- List all running pods
 	- List all running deployments
-	- Create ```nginx-proxy-deployment``` deployment and then scale up the deployment up to 5 replicas
-	- Can you create a deployment which run 3 replicas with docker image ```python-app``` on port ```:5001```
+	- Create ```prod``` namespace
+	- Create ```nginx-proxy-deployment``` deployment in ```prod``` namespace and then scale up the deployment up to 5 replicas
+	- Can you create a deployment which run 3 replicas with docker image ```python-app``` on port ```:5001``` using ```nginx-proxy-deployment``` as a template
 
 6. Task: Database. There is already existing MySQL database ```db_sportsbook``` with two tables ```tCustomer``` and ```tBet```:
 
@@ -130,7 +131,7 @@ Change current working directory into ```jenkins``` and execute
 ./get_url.sh
 ```
 
-Open the url in a browser with provided credentials for ```gnlops```. Create a new free style Jenkins project which includes at lest three steps:
+Open the url in a browser with provided credentials for ```gnlops```. Create either a new free style Jenkins project or a Jenkins pipeline which includes at lest three steps:
 
 - Checkout ```origin/master``` branch of GitHub repository https://github.com/stoyanpisov/picalc.git into seprate ```/src``` sub directory
 - Build simple project using following shell command

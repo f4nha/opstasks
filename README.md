@@ -26,7 +26,7 @@ Values:
 	- Check available namespaces
 	- List all running pods
 	- List all running deployments
-	- Scale up ```nginx-proxy-deployment``` deployment up to 5 replicas
+	- Create ```nginx-proxy-deployment``` deployment and then scale up the deployment up to 5 replicas
 	- Can you create a deployment which run 3 replicas with docker image ```python-app``` on port ```:5001```
 
 6. Task: Database. There is already existing MySQL database ```db_sportsbook``` with two tables ```tCustomer``` and ```tBet```:

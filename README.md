@@ -93,7 +93,7 @@ MariaDB [db_sportsbook]> select * from tBet limit 10;
 
 Using ```mysql``` command line client from command line try the following tasks:
 
- - Update ```country_code = "AUS"``` for ```cust_id = 33```
+ - Update ```country_code = "AUS"``` for ```cust_id = 6```
  - Select all bets from ```tBet``` for ```country_code = "GBR"```
  - How can we improve the select statement speed for the task above?
 
